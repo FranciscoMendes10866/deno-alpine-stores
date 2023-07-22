@@ -1,0 +1,31 @@
+@layout('layouts/main')
+@set('title', 'Product Catalog')
+
+@section('body')
+<section>
+  <div class="columns">
+    @each(product in products)
+      <div class="column col-3 col-xs-12 col-lg-6 my-2">
+        <div class="card-image" style="overflow-x: hidden;">
+          <img class="img-fit-cover" style="height: 300px;" src="{{ product.images[0] }}" alt="..." />
+        </div>
+        <div class="card-header mt-2">
+          <a class="card-title h5" href="/{{ product.id }}">{{ product.title }}</a>
+          <div class="card-subtitle">
+            <span class="label">{{ product.price }}€</span>
+          </div>
+        </div>
+        <div class="card-body mt-2">{{ product.description }}</div>
+        <button
+          class="btn mt-2"
+          x-data
+          :class="{'btn-primary': $store.globalStore.bookmarks.includes('{{ product.id }}')}"
+          @click="$store.globalStore.bookmarkHandler('{{ product.id }}')"
+        >
+          Save
+        </button>
+      </div>
+    @end
+  </div>
+</section>
+@end

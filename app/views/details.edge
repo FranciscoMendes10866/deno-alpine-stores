@@ -1,0 +1,26 @@
+@layout('layouts/main')
+@set('title', 'Product Details')
+
+@section('body')
+<section>
+  <div class="columns">
+    <div class="col-4">
+      <img src="{{ product.images[0] }}" class="img-responsive" alt="..." />
+    </div>
+
+    <div class="col-8">
+      <h1>{{ product.title }}</h1>
+      <p>{{ product.description }}</p>
+      <span class="label">{{ product.price }}€</span>
+      <button
+        class="btn ml-2"
+        x-data
+        :class="{'btn-primary': $store.globalStore.bookmarks.includes('{{ product.id }}')}"
+        @click="$store.globalStore.bookmarkHandler('{{ product.id }}')"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</section>
+@end

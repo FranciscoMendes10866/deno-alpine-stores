@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/spectre.css@0.5.9/dist/spectre.min.css" integrity="sha256-vrblgX5/Hxa+hCarxXHkiC7lv9vz0k3mNiPKUBjY96o=" crossorigin="anonymous">
+    <title>Joy | {{ title }}</title>
+  </head>
+  <body>
+    <main class="container">
+      @!component('components/navbar')
+      @!section('body')
+    </main>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.12.3/dist/cdn.min.js" integrity="sha256-rdzBMVaKvHqpoplwGSKTvgS3dVI+gjaITQt1IlMNilM=" crossorigin="anonymous"></script>
+    <script defer src="store.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.3/dist/cdn.min.js" integrity="sha256-tthxNdZk9Up2D6gLZBNxWo/w14TijORR5uNgYj7XP+A=" crossorigin="anonymous"></script>
+  </body>
+</html>
